@@ -16,11 +16,11 @@ SELECT * FROM countries WHERE population >= 100000;
 
 -- 問5
 -- 平均寿命が56歳から76歳の国をすべて抽出してください。
-SELECT *  FROM countries WHERE life_expectancy >= 56 AND life_expectancy <=76;
+SELECT *  FROM countries WHERE life_expectancy between 56 AND 76;
 
 -- 問6
 -- 国コードがNLB,ALB,DZAのもの市区町村をすべて抽出してください。
-SELECT *  FROM cities WHERE country_code= 'NLB' OR country_code= 'ALB' OR country_code='DZA';
+SELECT *  FROM cities WHERE country_code IN('NLB','ALB','DZA');
 
 -- 問7
 -- 独立独立記念日がない国をすべて抽出してください。
@@ -44,11 +44,11 @@ SELECT * FROM countries WHERE name LIKE  'an%';
 
 -- 問12
 -- 全国の中から独立記念日が1990年より前または人口が10万人より多い国を全て抽出してください。
-SELECT *  FROM countries WHERE indep_year <=1990 OR population >=100000;
+SELECT *  FROM countries WHERE indep_year <1990 OR population >=100000;
 
 -- 問13
 -- コードがDZAもしくはALBかつ独立記念日が1990年より前の国を全て抽出してください。
-SELECT *  FROM countries WHERE indep_year <=1990 AND code='ALB' OR code ='DZA';
+SELECT *  FROM countries WHERE indep_year <1990 AND code='ALB' OR indep_year <1990　AND code ='DZA';
 
 -- 問14
 -- 全ての地方をグループ化せずに表示してください。
